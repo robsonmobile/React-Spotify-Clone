@@ -1,0 +1,42 @@
+.sidebar {
+  height: 100vh;
+  min-width: 230px;
+  flex: 0.2;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #040404;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: white; /* color of the tracking area */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: black; /* color of the scroll thumb */
+    border-radius: 5px; /* roundness of the scroll thumb */
+  }
+
+.sidebar > hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.sidebarLogo {
+  margin-right: auto;
+  height: 70px;
+  padding: 10px;
+}
+
+.sidebarTitle {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 12px;
+}

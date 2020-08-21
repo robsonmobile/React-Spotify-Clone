@@ -9,7 +9,8 @@ import { Context } from "./context/Context";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const { user, token, dispatch } = useContext(Context);
+  const [token, setToken] = useState(null);
+  const [{}, dispatch] = useContext(Context);
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -17,16 +18,13 @@ function App() {
     const _token = hash.access_token;
 
     if (_token) {
-      dispatch({
-        type: "SET_TOKEN",
-        payload: _token,
-      });
+      setToken(_token);
 
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
         dispatch({
           type: "SET_USER",
-          payload: user,
+          payload: _token,
         });
       });
     }

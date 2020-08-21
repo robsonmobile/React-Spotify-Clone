@@ -32,6 +32,8 @@ function App() {
     }
   }, []);
 
+  console.log(token);
+
   return <div className="App">{token ? <Homepage /> : <Login />}</div>;
 }
 
